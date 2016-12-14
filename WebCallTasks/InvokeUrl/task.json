@@ -1,0 +1,38 @@
+{
+	"id": "84880C51-24E7-4024-92F6-9F36E5748C87",
+	"name": "bullhorn-get",
+	"friendlyName": "Bullhorn - Invoke URL (GET)",
+	"description": "Call HTTP Get request using provided url. Doesn't throw exception when request fails.",
+	"publisher": "jungeriusit",
+	"helpMarkDown": "",
+	"category": "Utility",
+	"visibility": [
+		"Release",
+		"Build"
+	],
+	"demands": [],
+	"version": {
+		"Major": "1",
+		"Minor": "0",
+		"Patch": "0"
+	},
+	"minimumAgentVersion": "1.83.0",
+	"instanceNameFormat": "HTTP GET: $(url)",
+	"inputs": [
+		{
+			"name": "url",
+			"type": "string",
+			"label": "Url",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "Web request Url"
+		}
+	],
+	"execution": {
+		"PowerShell": {
+			"target": "$(currentDirectory)\\invokeurl.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}
